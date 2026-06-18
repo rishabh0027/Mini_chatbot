@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Chats</h2>
+
+    <button onclick="clearChat()">
+        + New Chat
+    </button>
+
+    <div id="history"></div>
+
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+
+        <select id="model">
+
+            <option value="phi3">
+                Phi-3
+            </option>
+
+            <option value="gemma2:2b">
+                Gemma
+            </option>
+
+            <option value="qwen2.5:1.5b">
+                Qwen
+            </option>
+
+        </select>
+
+    </div>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+
+        <input
+            id="user-input"
+            placeholder="Ask anything..."
+        >
+
+        <button onclick="sendMessage()">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
